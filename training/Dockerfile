@@ -1,0 +1,15 @@
+#Set required base image, here a python version that is compatible with the sklearn package we want to install
+FROM python:3.8.20-slim-bullseye
+#Set working directory
+WORKDIR /app
+#Copy requirements.txt and train.py to the working directory
+COPY requirements.txt .
+COPY train.py .
+#Install dependencies from the requirements.txt file
+RUN pip install --no-cache-dir -r requirements.txt
+#Define the command for docker container of train.py
+CMD ["python", "train.py"]
+
+
+# Build docker image command: docker build . --tag docker_infer:1.0
+# Run docker command: docker run --rm -it --volume ./:/app/models docker_infer:1.1
