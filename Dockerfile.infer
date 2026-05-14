@@ -1,9 +1,15 @@
+# Load the required image 
 FROM python:3.9-slim
+#Set working directory inside of container
 WORKDIR /app
+#Copy requirements, script and model into working directory
 COPY requirements.txt .
 COPY server.py .
 COPY app/models /app/models
+#Install all dependencies according to requirements file
 RUN pip install --no-cache-dir -r requirements.txt
+# Define port 
 EXPOSE 8080
+# Define command for executing the script to serve the model
 CMD ["python", "server.py"]
 
