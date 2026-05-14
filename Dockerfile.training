@@ -11,5 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 CMD ["python", "train.py"]
 
 
-# Build docker image command: docker build . --tag iris-api_training:1.0
+# Build docker image command: docker build -f Dockerfile.training -t iris-api:training1.0 .
 # Run docker command: docker run --rm -it --volume ./app/models:/app/models iris-api_training:1.0
