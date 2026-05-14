@@ -1,12 +1,11 @@
-FROM <base imagae>
+FROM <python:alpine3.22>
+WORKDIR /
+COPY requirements.txt .
 
-# TODO: Set a working directory
+RUN pip install --no-cache-dir -r requirements.txt
+COPY train.py .
 
-# TODO: Copy the requirements.txt file to the working directory
+CMD ["python", "train.py"]
 
-# TODO: Install the Python dependencies
 
-# TODO: Copy the training script (train.py) to the working directory
 
-# TODO: Run the training script that generates the model
-CMD [...]
