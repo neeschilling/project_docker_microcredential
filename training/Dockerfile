@@ -12,4 +12,4 @@ CMD ["python", "train.py"]
 
 
 # Build docker image command: docker build . --tag docker_infer:1.0
-# Run docker command: docker run --rm -it --volume ./:/app/models docker_infer:1.1
+# Run docker command: docker run --rm -it --volume ./app/models:/app/models docker_infer:1.1
