@@ -1,0 +1,7 @@
+Model training complete and saved as iris_model.pkl
+=== Report resources usage ===
+JobID         Partition    Elapsed      State   TotalCPU     MaxRSS     AveRSS 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- 
+64471721          doduo   00:00:12    RUNNING   00:00:00                       
+64471721.ba+              00:00:12    RUNNING   00:00:00                       
+64471721.ex+              00:00:12    RUNNING   00:00:00                       
