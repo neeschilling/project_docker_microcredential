@@ -1,0 +1,22 @@
+# go to scratch folder if not set yet
+$ cd $VSC_SCRATCH
+
+# clone git repository with all necessary files
+$ git clone git@github.com:neeschilling/project_docker_microcredential.git
+
+# go into project folder
+cd project_docker_microcredential/
+
+# convert existing docker image to apptainer image from dockerhub
+singularity pull iris-api_training.sif docker://neesch/iris-api:training1.0
+
+# run image interactively to troubleshoot
+singularity shell -B ./:/app/models iris-api_training.sif
+Singularity> python train.py
+
+# run image normal
+singularity run -B .:/app/models iris-api_training.sif python train.py
+
+# make slurm_iris-api_training.sh file including changing the directory and running train.py using the iri-api_training.sif image
+# run the job and get output log and error files
+sbatch slurm_iris-api_training.sh
